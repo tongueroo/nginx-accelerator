@@ -6,3 +6,6 @@ logs
 nginx/*_temp
 pkg
 tmp
+/ngx_openresty
+/vendor/projects/ngx_openresty-1.2.7.6/Makefile
+/vendor/projects/ngx_openresty-1.2.7.6/build/
