@@ -1,8 +1,10 @@
 #!/bin/bash
 
-./build
-luarocks make
 export PATH=$(pwd)/ngx_openresty/nginx/sbin:$PATH
+export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;;"
+
+./build
+luarocks make --local
 nginx -p `pwd`/nginx/ -c nginx.conf -s reload || nginx -p `pwd`/nginx/ -c nginx.conf
 sleep 2
 curl -v http://localhost:8080/test
