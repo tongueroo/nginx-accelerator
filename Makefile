@@ -2,6 +2,8 @@ ACCEL_HOME := $(shell pwd)
 default: ready
 
 ready: ngx_openresty/nginx/sbin/nginx $(HOME)/.luarocks/bin/moonc
+	@./build
+	@luarocks make --local
 
 ngx_openresty/nginx/sbin/nginx:
 	@cd vendor/projects/ngx_openresty && ./configure --prefix=$(ACCEL_HOME)/ngx_openresty --with-luajit --with-ld-opt=-L$(HOME)/local/lib --with-debug
