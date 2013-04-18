@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$HOME/.luarocks/bin:$PATH
+
 cd src
 
 if [ "$1" == "watch" ]
