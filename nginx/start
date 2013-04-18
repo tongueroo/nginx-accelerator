@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=$(pwd)/ngx_openresty/nginx/sbin:$PATH
+export PATH=$(pwd)/ngx_openresty/nginx/sbin:$HOME/.luarocks/bin:$PATH
 export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;;"
 
 ./build
