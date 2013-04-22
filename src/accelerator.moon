@@ -62,7 +62,7 @@ access = (opts) ->
       else
         ngx.header['X-Cache-State'] = cache.ttl - (os.time() - cache.time)
 
-      if cache.body
+      if cache.body and cache.body != ''
         ngx.say(cache.body) -- render body
 
     -- Rewrite cache if cache does not exist or ttl has expired
