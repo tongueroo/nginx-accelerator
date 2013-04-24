@@ -63,7 +63,7 @@ access = function(opts)
         ngx.header['X-Cache-State'] = cache.ttl - (os.time() - cache.time)
       end
       if cache.body and cache.body ~= '' then
-        ngx.say(cache.body)
+        ngx.print(cache.body)
       end
     end
     if not cache or os.time() - cache.time >= cache.ttl then
